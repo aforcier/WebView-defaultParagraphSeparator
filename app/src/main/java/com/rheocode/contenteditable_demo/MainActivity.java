@@ -9,13 +9,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,10 +27,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mWebView = (WebView) findViewById(R.id.webview);
 
-        String htmlFile = getHtmlFromFile(this, "contenteditable.html");
-        mWebView.loadDataWithBaseURL("file:///android_asset/", htmlFile, "text/html", "utf-8", "");
+        if (mWebView != null) {
+            WebSettings webSettings = mWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            String htmlFile = getHtmlFromFile(this, "contenteditable.html");
+            mWebView.loadDataWithBaseURL("file:///android_asset/", htmlFile, "text/html", "utf-8", "");
 
-        enableWebDebugging(true);
+            enableWebDebugging(true);
+        }
     }
 
     @SuppressLint("NewApi")
