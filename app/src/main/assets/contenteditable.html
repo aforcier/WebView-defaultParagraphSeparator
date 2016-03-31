@@ -3,6 +3,9 @@
   <head>
     <title>Contenteditable Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+      <script type="text/javascript">
+          document.execCommand('defaultParagraphSeparator', false, 'p');
+      </script>
   </head>
   <body>
       <div contenteditable="true" id="content_field" style="height: 90vh; font-size: 16px; line-height:24px; margin-bottom: 10px">
