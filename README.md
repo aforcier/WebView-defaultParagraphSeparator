@@ -1,3 +1,5 @@
+DEPRECATED
+
 # WebView-defaultParagraphSeparator
 Demonstrates strange autocorrect behavior when `defaultParagraphSeparator` is set to `p` inside a WebView.
 
